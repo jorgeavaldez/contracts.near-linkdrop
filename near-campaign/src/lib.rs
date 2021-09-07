@@ -3,7 +3,7 @@ use near_sdk::collections::UnorderedMap;
 use near_sdk::json_types::U128;
 use near_sdk::serde::{Deserialize, Serialize};
 use near_sdk::serde_json::json;
-use near_sdk::{env, near_bindgen, AccountId, Balance, PanicOnDefault, Promise, PublicKey};
+use near_sdk::{env, near_bindgen, AccountId, Balance, Timestamp, PanicOnDefault, Promise, PublicKey};
 
 mod add_keys;
 mod claim;
@@ -47,6 +47,8 @@ pub struct KeysStats {
 pub struct Campaign {
   tokens_per_key: Balance,
   keys_stats: KeysStats,
-  created_at: u64,
+  created_at: Timestamp,
   keys: UnorderedMap<PublicKey, KeyStatus>,
+  start_date: Timestamp,
+  end_date: Timestamp,
 }

@@ -1,0 +1,17 @@
+[package]
+name = "tests"
+version = "0.1.0"
+authors = ["jorgeavaldez <jorge@yung.dev>"]
+edition = "2018"
+
+[dev-dependencies]
+near-sdk = "4.0.0-pre.2"
+near-sdk-sim = "4.0.0-pre.2"
+near-crypto = "0.1.0"
+near-campaign = { path = "../near-campaign" }
+user = { path = "../user" }
+linkdrop = { path = "../linkdrop" }
+
+[[test]]
+name="integration"
+path="sim/main.rs"

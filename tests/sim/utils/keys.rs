@@ -209,3 +209,10 @@ pub fn get_public_keys(from: usize, to: usize) -> Vec<PublicKey> {
     .map(|&key| key.parse().unwrap())
     .collect()
 }
+
+pub fn get_public_key_strings(from: usize, to: usize) -> Vec<&'static str> {
+  KEYS[from..=to]
+    .iter()
+    .map(|&key| key.clone())
+    .collect()
+}
