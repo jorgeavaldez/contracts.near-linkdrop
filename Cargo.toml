@@ -8,12 +8,6 @@ edition = "2018"
 members = ['near-campaign', 'linkdrop', 'user', 'tests']
 default-members = ['near-campaign', 'linkdrop', 'user', 'tests']
 
-[dev-dependencies]
-linkdrop = { path = "linkdrop" }
-user = { path = "user" }
-near-campaign = { path = "near-campaign" }
-tests = { path = "tests" }
-
 [[test]]
 name="integration"
 path="tests"

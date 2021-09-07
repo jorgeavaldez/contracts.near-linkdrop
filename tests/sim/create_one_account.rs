@@ -27,7 +27,7 @@ fn create_one_account() {
   near_campaign.user_account.signer = claim_signer.clone();
 
   // Create a new account
-  let res: ExecutionResult = call!(
+  call!(
     near_campaign.user_account,
     near_campaign.create_account_and_claim("john.testnet".parse().unwrap(), new_public_key)
   );

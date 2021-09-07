@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 near-sdk = "4.0.0-pre.2"
+near-campaign = { path = "../near-campaign" }
 
 [lib]
 crate-type = ["cdylib"]
