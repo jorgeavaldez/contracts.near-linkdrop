@@ -19,7 +19,7 @@ pub fn init(tokens_per_key: &str) -> (UserAccount, ContractAccount<NearCampaign>
     contract_id: "near_campaign",
     bytes: &NEAR_CAMPAIGN,
     signer_account: root,
-    init_method: new(U128::from(to_yocto(tokens_per_key)), None, None)
+    init_method: new(U128::from(to_yocto(tokens_per_key)), None, None, None)
   );
 
   (root, near_campaign)
@@ -35,7 +35,7 @@ pub fn init_with_timestamp(tokens_per_key: &str, start_date: Timestamp, end_date
     contract_id: "near_campaign",
     bytes: &NEAR_CAMPAIGN,
     signer_account: root,
-    init_method: new(U128::from(to_yocto(tokens_per_key)), Some(start_date), Some(end_date))
+    init_method: new(U128::from(to_yocto(tokens_per_key)), Some(start_date), Some(end_date), None)
   );
 
   (root, near_campaign)

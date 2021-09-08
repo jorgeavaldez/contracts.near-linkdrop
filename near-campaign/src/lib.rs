@@ -42,6 +42,16 @@ pub struct KeysStats {
   refunded: u64,
 }
 
+#[derive(
+  BorshSerialize, BorshDeserialize, Serialize, Deserialize, Copy, Clone, PartialEq, Debug,
+)]
+#[serde(crate = "near_sdk::serde")]
+pub enum SocialNetwork {
+  Twitter,
+  Instagram,
+  Facebook,
+}
+
 #[near_bindgen]
 #[derive(BorshSerialize, BorshDeserialize, PanicOnDefault)]
 pub struct Campaign {
@@ -51,4 +61,5 @@ pub struct Campaign {
   keys: UnorderedMap<PublicKey, KeyStatus>,
   start_date: Timestamp,
   end_date: Timestamp,
+  social_network: Option<SocialNetwork>,
 }

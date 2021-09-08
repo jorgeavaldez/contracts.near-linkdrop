@@ -1,6 +1,6 @@
 use crate::utils::{get_public_keys, init, init_external_linkdrop};
 use near_crypto::{InMemorySigner, SecretKey, Signer};
-use near_sdk_sim::{call, to_yocto, ExecutionResult};
+use near_sdk_sim::{call, to_yocto};
 use std::str::FromStr;
 
 const SK: &str =
