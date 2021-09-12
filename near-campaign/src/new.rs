@@ -11,7 +11,7 @@ impl Campaign {
     tokens_per_key: U128,
     start_date: Option<Timestamp>,
     end_date: Option<Timestamp>,
-    social_network: Option<SocialNetwork>,
+    social_network: Option<String>,
   ) -> Self {
     Self {
       tokens_per_key: tokens_per_key.into(),
@@ -28,7 +28,7 @@ impl Campaign {
       start_date: start_date.unwrap_or_default(),
       end_date: end_date.unwrap_or_default(),
 
-      social_network,
+      social_network: social_network.unwrap_or_default(),
     }
   }
 }

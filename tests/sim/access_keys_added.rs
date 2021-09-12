@@ -1,11 +1,11 @@
-use crate::utils::{get_public_keys, get_public_key_strings, init, init_external_linkdrop};
+use crate::utils::{get_public_keys, get_public_key_strings, init_near_campaign, init_external_linkdrop};
 use near_crypto::{PublicKey};
 use near_sdk_sim::{call};
 use std::str::FromStr;
 
 #[test]
 fn access_keys_added() {
-  let (root, near_campaign) = init("5");
+  let (root, near_campaign) = init_near_campaign("5");
   init_external_linkdrop(&root);
 
   let public_keys = get_public_keys(0, 0);

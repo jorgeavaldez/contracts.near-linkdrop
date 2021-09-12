@@ -11,7 +11,6 @@ impl Campaign {
       return 0;
     }
 
-
     let mut total_added = 0;
 
     keys.into_iter().for_each(|key| {

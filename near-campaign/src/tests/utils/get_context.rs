@@ -8,7 +8,7 @@ pub fn get_context() -> VMContext {
     predecessor_account_id: "a.testnet".to_string(),
     input: vec![],
     block_index: 0,
-    block_timestamp: 0,
+    block_timestamp: 50,
     account_balance: 10,
     account_locked_balance: 0,
     storage_usage: 0,

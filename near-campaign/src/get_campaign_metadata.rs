@@ -1,15 +1,16 @@
 use crate::*;
 
 // View method
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(crate = "near_sdk::serde")]
 pub struct Metadata {
-  tokens_per_key: U128,
-  keys_stats: KeysStats,
-  created_at: u64,
-  status: String,
-  start_date: u64,
-  end_date: u64,
+  pub tokens_per_key: U128,
+  pub keys_stats: KeysStats,
+  pub created_at: u64,
+  pub status: String,
+  pub start_date: u64,
+  pub end_date: u64,
+  pub social_network: String,
 }
 
 #[near_bindgen]
@@ -32,6 +33,7 @@ impl Campaign {
       status: status.to_string(),
       start_date: self.start_date,
       end_date: self.end_date,
+      social_network: self.social_network,
     }
   }
 }

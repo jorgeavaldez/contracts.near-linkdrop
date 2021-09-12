@@ -1,4 +1,4 @@
-use crate::utils::{get_public_keys, init};
+use crate::utils::{get_public_keys, init_near_campaign};
 use near_crypto::{InMemorySigner, SecretKey, Signer};
 use near_sdk_sim::{call, to_yocto};
 use std::str::FromStr;
@@ -8,7 +8,7 @@ const SK: &str =
 
 #[test]
 fn claim_one_link() {
-  let (root, mut near_campaign) = init("5");
+  let (root, mut near_campaign) = init_near_campaign("5");
   let bob = root.create_user("bob".parse().unwrap(), to_yocto("10"));
   let public_keys = get_public_keys(0, 0);
 

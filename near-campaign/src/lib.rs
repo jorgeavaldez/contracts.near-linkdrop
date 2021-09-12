@@ -9,11 +9,13 @@ mod add_keys;
 mod claim;
 mod clear_state;
 mod create_account_and_claim;
-mod get_campaign_metadata;
+pub mod get_campaign_metadata;
 mod get_key_balance;
 mod get_keys;
 mod new;
 mod refund_keys;
+mod set_start_and_end_date;
+mod set_social_network;
 
 #[cfg(test)]
 mod tests;
@@ -42,16 +44,6 @@ pub struct KeysStats {
   refunded: u64,
 }
 
-#[derive(
-  BorshSerialize, BorshDeserialize, Serialize, Deserialize, Copy, Clone, PartialEq, Debug,
-)]
-#[serde(crate = "near_sdk::serde")]
-pub enum SocialNetwork {
-  Twitter,
-  Instagram,
-  Facebook,
-}
-
 #[near_bindgen]
 #[derive(BorshSerialize, BorshDeserialize, PanicOnDefault)]
 pub struct Campaign {
@@ -61,5 +53,5 @@ pub struct Campaign {
   keys: UnorderedMap<PublicKey, KeyStatus>,
   start_date: Timestamp,
   end_date: Timestamp,
-  social_network: Option<SocialNetwork>,
+  social_network: String,
 }
