@@ -1,7 +1,7 @@
 use crate::utils::{init_internal_linkdrop, init_external_linkdrop};
 use near_sdk::serde_json::json;
 use near_crypto::{InMemorySigner, SecretKey, KeyType};
-use near_sdk::PublicKey;
+use near_sdk::{ AccountId, PublicKey };
 use near_sdk::borsh::BorshSerialize;
 use near_sdk_sim::{call, DEFAULT_GAS, UserAccount, to_yocto, STORAGE_AMOUNT, ExecutionResult};
 use near_sdk_sim::transaction::{Transaction, SignedTransaction, ExecutionStatus, ExecutionOutcome};
@@ -22,7 +22,7 @@ fn client_flow() {
   // Test can create a user account
   let create_user_result: ExecutionResult = call!(
     alice,
-    linkdrop.create_user_account(alice_user_pk),
+    linkdrop.create_user_account(AccountId::new_unchecked(String::from("alice")), alice_user_pk),
     deposit = STORAGE_AMOUNT + to_yocto("5")
   );
 
