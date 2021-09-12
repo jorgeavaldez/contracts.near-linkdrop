@@ -8,6 +8,16 @@ edition = "2018"
 members = ['near-campaign', 'linkdrop', 'user', 'tests']
 default-members = ['near-campaign', 'linkdrop', 'user', 'tests']
 
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+# Opt into extra safety checks on arithmetic operations https://stackoverflow.com/a/64136471/249801
+overflow-checks = true
+
 [[test]]
 name="integration"
 path="tests"
