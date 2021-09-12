@@ -1,7 +1,7 @@
 use linkdrop::LinkdropContract as Linkdrop;
 use near_sdk_sim::runtime::GenesisConfig;
 use near_sdk_sim::{
-  deploy, init_simulator, lazy_static_include, ContractAccount, UserAccount, STORAGE_AMOUNT, to_yocto
+  deploy, init_simulator, lazy_static_include, ContractAccount, UserAccount
 };
 
 lazy_static_include::lazy_static_include_bytes! {
