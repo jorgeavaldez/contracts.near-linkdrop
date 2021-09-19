@@ -15,4 +15,7 @@ RUN apt-get update && apt-get install -y \
     clang \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . .
+COPY Cargo.toml ./
+COPY near-campaign ./near-campaign/
+COPY user ./user/
+COPY linkdrop ./linkdrop/
